@@ -136,13 +136,9 @@ const Form = ({ type }) => {
               <p className="text-red-500 max-w-[300px]">{errors.password.message}</p>
             )}
           </div>
-
-          {/* <button className="button" type="submit">
-            {type === "register" ? "Join Free" : "Let's Chat"}
-          </button> */}
-          <Button variant="contained" className="button" type="submit">
-            {type === "register" ? "Join Free" : "Let's Chat"}
-          </Button>
+            <Button variant="contained" className="button" type="submit">
+              {type === "register" ? "Join Free" : "Let's Chat"}
+            </Button>
         </form>
 
         {type === "register" ? (

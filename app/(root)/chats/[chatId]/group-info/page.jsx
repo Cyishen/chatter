@@ -110,7 +110,7 @@ const GroupInfo = () => {
 
         <div className="flex flex-wrap gap-3">
           {chat?.members?.map((member, index) => (
-            <div key={index} className="flex justify-center">
+            <div key={index} className="flex justify-center gap-1">
               <img
                 src={member.profileImage || "/assets/person.jpg"}
                 alt='image'

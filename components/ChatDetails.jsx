@@ -5,7 +5,7 @@ import Link from "next/link";
 import Loader from './Loader';
 import { useSession } from 'next-auth/react';
 
-import { AddPhotoAlternate, IndeterminateCheckBoxRounded } from "@mui/icons-material";
+import { AddPhotoAlternate } from "@mui/icons-material";
 import { CldUploadButton } from "next-cloudinary";
 import MessageBox from './MessageBox';
 import { pusherClient } from '@lib/pusher';
@@ -122,7 +122,7 @@ const ChatDetails = ( {chatId} ) => {
   return loading ? (
     <Loader />
   ) : (
-    <div className="pb-20">
+    <div className="pb-20 sticky top-24">
       <div className="chat-details">
         <div className="chat-header">
           {chat?.isGroup ? (
@@ -137,9 +137,9 @@ const ChatDetails = ( {chatId} ) => {
 
               <div className="text w-full">
                 <p>
-                  {chat?.name || 'Group'} &#160; &#183; &#160; {chat?.members?.length}{" "}members
+                  {chat?.name || 'Group'} <span className='text-small-medium'>| {chat?.members?.length}{" "}members</span>
                 </p>
-                <div className='flex items-center h-10 gap-3'>
+                <div className='flex items-center h-10 gap-1'>
                   {chat && chat.members.map( (image, index) => (
                     <Link 
                       href={`/profile/${image._id}`} 
@@ -160,11 +160,14 @@ const ChatDetails = ( {chatId} ) => {
             </>
           ) : (
             <>
-              <img
-                src={otherMembers[0].profileImage || "/assets/person.jpg"}
-                alt="profile photo"
-                className="profilePhoto"
-              />
+              <Link href={`/profile/${otherMembers[0]._id}`} >
+                <img
+                  src={otherMembers[0].profileImage || "/assets/person.jpg"}
+                  alt="profile photo"
+                  className="profilePhoto"
+                />
+              </Link>
+
               <div className="text">
                 <p>{otherMembers[0].username}</p>
               </div>
@@ -186,7 +189,7 @@ const ChatDetails = ( {chatId} ) => {
         <div className="send-message">
           <div className="prepare-message">
             <CldUploadButton
-              options={{ maxFiles: 2 }}
+              options={{ maxFiles: 1 }}
               onUpload={sendPhoto}
               uploadPreset="pynmmnkw"
             >
@@ -201,7 +204,7 @@ const ChatDetails = ( {chatId} ) => {
 
             <input
               type="text"
-              placeholder="Write a message..."
+              placeholder="Message"
               className="input-field"
               value={text}
               onChange={(e) => setText(e.target.value)}
@@ -210,7 +213,7 @@ const ChatDetails = ( {chatId} ) => {
           </div>
 
           <div onClick={sendText}>
-            <img src="/assets/send.jpg" alt="send" className="send-icon" />
+            <img src="/assets/send.svg" alt="send" className="send-icon" />
           </div>
         </div>
       </div>

@@ -89,6 +89,9 @@
 .profile-page {
   @apply mt-16 flex flex-col gap-11 items-center justify-center max-w-[350px] mx-auto;
 }
+.profile-page2 {
+  @apply mt-16 flex flex-col items-center justify-center max-w-[300px] min-h-[300px] bg-white rounded-xl mx-auto;
+}
 
 .edit-profile {
   @apply flex flex-col gap-9
@@ -99,7 +102,7 @@
 }
 
 .btn {
-  @apply flex items-center justify-center rounded-xl p-3 bg-gradient-to-l from-blue-1 to-blue-3 text-body-bold text-white;
+  @apply flex items-center justify-center rounded-xl p-3 bg-black text-body-bold text-white;
 }
 
 /* Chat List */
@@ -133,7 +136,7 @@
 }
 
 .read {
-  @apply flex justify-center items-center w-5 h-5 bg-green-400 rounded-full text-small-medium 
+  @apply flex justify-center items-center w-5 h-5 bg-green-400 text-white rounded-full text-small-medium 
 }
 
 /* Contacts */
@@ -146,7 +149,7 @@
 }
 
 .contact-list {
-  @apply w-1/2 max-lg:w-full flex flex-col gap-5 bg-white rounded-3xl py-5 px-5;
+  @apply w-full max-lg:w-full flex flex-col gap-5 bg-white rounded-3xl py-5 px-5;
 }
 
 .contact {
@@ -168,12 +171,12 @@
 /* ChatDetails */
 .chat-details {
   @apply flex flex-col bg-white rounded-2xl;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 180px);
 }
 
 /* Chat Header */
 .chat-header {
-  @apply flex items-center gap-4 px-8 py-3 text-body-bold;
+  @apply flex items-center gap-4 px-8 py-3 text-body-bold w-full;
 }
 
 /* Chat Body */
@@ -207,7 +210,7 @@
 
 /* Message Input */
 .send-message {
-  @apply w-full flex items-center justify-between px-7 py-3 rounded-3xl cursor-pointer bg-white;
+  @apply w-full flex items-center justify-between px-7 py-3 rounded-b-3xl cursor-pointer bg-white;
 }
 
 .prepare-message {

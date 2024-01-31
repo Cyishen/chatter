@@ -97,7 +97,10 @@ const Profile = () => {
             onUpload={uploadPhoto}
             uploadPreset="pynmmnkw"
           >
-            <p className="text-body-bold">Upload new photo</p>
+            <div className="flex flex-col items-center gap-3">
+              <p className="text-body-bold">Upload new photo</p>
+              <img src="/assets/upload.svg" alt="upload" width={50} height={50}/>
+            </div>
           </CldUploadButton>
         </div>
 

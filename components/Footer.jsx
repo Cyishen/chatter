@@ -3,17 +3,6 @@ import Image from "next/image"
 const Footer = () => {
   return (
     <footer className="mb-12">
-      <div className="wrapper">
-        <div className="flex justify-center gap-3 text-[#757575] flex-wrap ">
-          <p className="word-hover">About</p>
-          <p className="word-hover">Blog</p>
-          <p className="word-hover">Apps</p>
-          <p className="word-hover">Sign up</p>
-          <p className="word-hover">Log in</p>
-          <p className="word-hover">Help</p>
-        </div>
-      </div>
-
       <div className="wrapper flex flex-col text-center">
           <p>Follow us</p>
           <div className="flex flex-row justify-center gap-3">

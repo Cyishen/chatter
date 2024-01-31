@@ -1,6 +1,5 @@
 "use client";
 
-import { Logout, SmsOutlined, People } from "@mui/icons-material";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -33,7 +32,7 @@ const TopBar = () => {
           >
             Chats
           </Link>
-          <SmsOutlined />
+          <img src="/assets/chat.svg" alt="chat" width={25} height={25}/>
         </div>
         
         <div className="flex items-center gap-2 max-sm:hidden">
@@ -45,14 +44,11 @@ const TopBar = () => {
           >
             Contacts
           </Link>
-          <People />
+          <img src="/assets/person-3-fill.svg" alt="chat" width={30} height={30}/>
         </div>
         
         <div className="flex items-center gap-2">
-          <Logout
-            sx={{ color: "#737373", cursor: "pointer" }}
-            onClick={handleLogout}
-          />
+          <img src="/assets/logout.svg" alt="chat" width={25} height={25} onClick={handleLogout} className="cursor-pointer hover:invert"/>
 
           <Link href="/profile">
             <img
