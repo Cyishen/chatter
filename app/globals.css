@@ -36,7 +36,7 @@
 }
 
 .input {
-  @apply max-w-[350px] w-full flex items-center justify-between px-5 py-3 border rounded-lg cursor-pointer shadow-xl;
+  @apply max-w-[350px] w-full flex items-center justify-between px-5 py-3 border rounded-lg cursor-pointer shadow-xl h-12;
 }
 
 .input-field {

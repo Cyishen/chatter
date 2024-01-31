@@ -4,7 +4,7 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-
+import IconButton from '@mui/material/IconButton';
 
 const TopBar = () => {
   const pathname = usePathname();
@@ -48,7 +48,14 @@ const TopBar = () => {
         </div>
         
         <div className="flex items-center gap-2">
-          <img src="/assets/logout.svg" alt="chat" width={25} height={25} onClick={handleLogout} className="cursor-pointer hover:invert"/>
+          <IconButton
+            aria-label="logout"
+            size="medium"
+            color="secondary"
+            onClick={handleLogout}  
+          >
+            <img src="/assets/logout.svg" alt="logout" width={25} height={25} />
+          </IconButton>
 
           <Link href="/profile">
             <img

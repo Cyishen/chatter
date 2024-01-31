@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { signIn } from "next-auth/react"
 import { useState } from "react";
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 
 const Form = ({ type }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -127,11 +128,22 @@ const Form = ({ type }) => {
                 placeholder="Password"
                 className="input-field"
               />
-              <button type="button" onClick={toggleShowPassword}>
-                {showPassword ? "Hide" : "Show"}
-              </button>
+              <IconButton 
+                type="button"
+                aria-label="eye-closed" 
+                size="small"
+                color="primary" 
+                onClick={toggleShowPassword}
+              >
+                {showPassword ? (
+                  <img src="/assets/eye-closed.svg" width={20} height={20} />
+                ) : (
+                  <img src="/assets/eye-open.svg" width={20} height={20} />
+                )}
+              </IconButton>
               <LockOutlined sx={{ color: "#737373" }} />
             </div>
+            
             {errors.password && (
               <p className="text-red-500 max-w-[300px]">{errors.password.message}</p>
             )}

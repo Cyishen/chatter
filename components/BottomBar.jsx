@@ -21,16 +21,16 @@ const BottomBar = () => {
       </div>
 
       <div className={`${ pathname === "/chats" ? "text-black rounded-[10px] bg-gray-100" : "text-[#737373]" } flex flex-col items-center text-center`}>
-        <Link
-          href="/chats"
-          className="p-1"
-        >
-          <SmsOutlined 
-            sx={{ color: "#737373", fontSize: 25}} 
-            className={`${ pathname === "/chats" ? "text-black" : "text-[#737373]" }`}
-          />
-          <p className="text-base-light">Chat</p>
-        </Link>
+          <Link
+            href="/chats"
+            className="p-1"
+          >
+            <SmsOutlined 
+              sx={{ color: "#737373", fontSize: 25}} 
+              className={`${ pathname === "/chats" ? "text-black" : "text-[#737373]" }`}
+            />
+            <p className="text-base-light">Chat</p>
+          </Link>
       </div>
       
       <div className={`${ pathname === "/contacts" ? "text-black rounded-[10px] bg-gray-100" : "text-[#737373]" } flex flex-col items-center text-center`}>

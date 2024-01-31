@@ -90,7 +90,7 @@ const Contacts = () => {
 
       <div className="contact-bar">
         <div className="contact-list">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between item">
             <p className="text-body-bold">Select</p>
             <IconButton
               aria-label="open-group"
@@ -98,7 +98,6 @@ const Contacts = () => {
               color="secondary" 
               variant="contained"
               onClick={ ()=>setOpen(!open) }
-
             >
               <img src="/assets/person-3-fill.svg" alt="group" width={25} height={25} />
             </IconButton>
