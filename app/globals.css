@@ -87,10 +87,11 @@
 
 /* Profile Page */
 .profile-page {
-  @apply mt-16 flex flex-col gap-11 items-center justify-center max-w-[350px] mx-auto;
+  @apply sm:mt-14 mb-20 flex flex-col gap-11 items-center justify-center max-w-[350px] mx-auto;
+  height: calc(100vh - 100px);
 }
 .profile-page2 {
-  @apply mt-16 flex flex-col items-center justify-center max-w-[300px] min-h-[300px] bg-white rounded-xl mx-auto;
+  @apply mt-10 mb-20 flex flex-col items-center justify-center max-w-[300px] min-h-[300px] bg-white rounded-xl mx-auto shadow-lg;
 }
 
 .edit-profile {
