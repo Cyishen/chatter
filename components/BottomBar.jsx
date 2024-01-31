@@ -1,7 +1,7 @@
 "use client"
 
 
-import { SmsOutlined, PeopleAltOutlined } from "@mui/icons-material";
+import { Telegram, PeopleRounded } from "@mui/icons-material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -14,8 +14,8 @@ const BottomBar = () => {
           <img 
             src="/assets/home.svg" 
             alt="home-icon" 
-            width={25} 
-            height={25} 
+            width={20} 
+            height={20} 
           />
           <p className="text-base-light text-[#737373]">Home</p>
       </div>
@@ -25,7 +25,7 @@ const BottomBar = () => {
             href="/chats"
             className="p-1"
           >
-            <SmsOutlined 
+            <Telegram 
               sx={{ color: "#737373", fontSize: 25}} 
               className={`${ pathname === "/chats" ? "text-black" : "text-[#737373]" }`}
             />
@@ -38,7 +38,7 @@ const BottomBar = () => {
           href="/contacts"
           className="p-1"
         >
-          <PeopleAltOutlined 
+          <PeopleRounded 
             sx={{ color: "#737373", fontSize: 25}} 
             className={`${ pathname === "/contacts" ? "text-black" : "text-[#737373]" }`}
           />

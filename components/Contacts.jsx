@@ -3,7 +3,7 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Loader from "./Loader";
-import { CheckCircle, RadioButtonUnchecked } from "@mui/icons-material";
+import { CheckCircle, RadioButtonUnchecked, Telegram } from "@mui/icons-material";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Button from '@mui/material/Button';
@@ -107,7 +107,7 @@ const Contacts = () => {
             {contacts.map((user, index) => (
               <div
                 key={index}
-                className="contact justify-between hover:bg-grey-2 rounded-lg py-2 sm:p-2"
+                className="contact justify-between hover:bg-grey-2 rounded-lg p-2"
                 onClick={() => handleSelect(user)}
               >
                 <div className="contact">
@@ -133,10 +133,12 @@ const Contacts = () => {
                     </>
                   ) : (
                     <Button 
-                      variant="contained" 
-                      onClick={createChat} 
+                      variant="contained"
+                      size="small"
+                      onClick={createChat}
+                      endIcon={<Telegram />} 
                       className="bg-black font-bold">
-                      Chat
+                      Cha
                     </Button>
                   )}
                 </div>
