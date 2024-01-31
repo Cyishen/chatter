@@ -108,7 +108,6 @@ const Contacts = () => {
               <div
                 key={index}
                 className="contact justify-between hover:bg-grey-2 rounded-lg p-2"
-                onClick={() => handleSelect(user)}
               >
                 <div className="contact">
                   <Link href={`/profile/${user._id}`}>
@@ -122,7 +121,7 @@ const Contacts = () => {
                   <p className="text-base-bold">{user.username}</p>
                 </div>
 
-                <div className="flex gap-1 items-center">
+                <div className="flex gap-1 items-center" onClick={() => handleSelect(user)}>
                   {open === true ? (
                     <>
                       {selectedContacts.find((item) => item === user) ? (
@@ -153,7 +152,7 @@ const Contacts = () => {
               <div className="flex flex-col gap-3">
                 <p className="text-body-bold">Group Chat Name</p>
                 <input
-                  placeholder="Enter group chat name..."
+                  placeholder="Enter group chat name"
                   className="input-group-name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -177,7 +176,7 @@ const Contacts = () => {
                 onClick={createChat}
                 disabled={selectedContacts.length === 0}
               >
-                START A NEW CHAT
+                START A GROUP CHAT
               </Button>
             </>
           )}

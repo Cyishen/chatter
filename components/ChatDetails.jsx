@@ -72,6 +72,8 @@ const ChatDetails = ( {chatId} ) => {
       console.log(err);
     }
   };
+  
+  const isSendButtonDisabled = text.trim() === '';
 
   const sendPhoto = async (result) => {
     try {
@@ -212,9 +214,9 @@ const ChatDetails = ( {chatId} ) => {
             />
           </div>
 
-          <div onClick={sendText}>
+          <button onClick={sendText} disabled={isSendButtonDisabled}>
             <img src="/assets/send.svg" alt="send" className="send-icon" />
-          </div>
+          </button>
         </div>
       </div>
     </div>
