@@ -88,10 +88,15 @@
 /* Profile Page */
 .profile-page {
   @apply sm:mt-14 mb-20 flex flex-col gap-11 items-center justify-center max-w-[350px] mx-auto;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 150px);
 }
 .profile-page2 {
   @apply mt-10 mb-20 flex flex-col items-center justify-center max-w-[300px] min-h-[300px] bg-white rounded-xl mx-auto shadow-lg;
+}
+
+.profile-page3 {
+  @apply sm:mt-14 mb-20 flex flex-col gap-11 items-center justify-center max-w-[350px] mx-auto;
+  height: calc(100vh - 100px);
 }
 
 .edit-profile {
@@ -211,7 +216,7 @@
 
 /* Message Input */
 .send-message {
-  @apply w-full flex items-center justify-between px-7 py-3 rounded-b-3xl cursor-pointer bg-white;
+  @apply w-full flex items-center justify-between px-3 sm:px-7 py-3 rounded-b-3xl cursor-pointer bg-white;
 }
 
 .prepare-message {

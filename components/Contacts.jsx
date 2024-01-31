@@ -107,7 +107,7 @@ const Contacts = () => {
             {contacts.map((user, index) => (
               <div
                 key={index}
-                className="contact justify-between hover:bg-grey-2 rounded-lg p-2"
+                className="contact justify-between hover:bg-grey-2 rounded-lg py-2 sm:p-2"
                 onClick={() => handleSelect(user)}
               >
                 <div className="contact">

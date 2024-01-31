@@ -136,9 +136,9 @@ const Form = ({ type }) => {
                 onClick={toggleShowPassword}
               >
                 {showPassword ? (
-                  <img src="/assets/eye-closed.svg" width={20} height={20} />
-                ) : (
                   <img src="/assets/eye-open.svg" width={20} height={20} />
+                ) : (
+                  <img src="/assets/eye-closed.svg" width={20} height={20} />
                 )}
               </IconButton>
               <LockOutlined sx={{ color: "#737373" }} />

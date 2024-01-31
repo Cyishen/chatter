@@ -76,7 +76,7 @@ const GroupInfo = () => {
   return loading ? (
     <Loader />
   ) : (
-    <div className="profile-page">
+    <div className="profile-page3">
       <h1 className="text-heading3-bold">Edit Group Info</h1>
 
       <form className="edit-profile" onSubmit={handleSubmit(updateGroupChat)}>

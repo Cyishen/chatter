@@ -186,8 +186,8 @@ const ChatDetails = ( {chatId} ) => {
           <div ref={bottomRef} />
         </div>
 
-        <div className="send-message">
-          <div className="prepare-message">
+        <div className="send-message gap-2">
+          <div className="prepare-message w-full">
             <CldUploadButton
               options={{ maxFiles: 1 }}
               onUpload={sendPhoto}
@@ -205,7 +205,7 @@ const ChatDetails = ( {chatId} ) => {
             <input
               type="text"
               placeholder="Message"
-              className="input-field"
+              className="w-full bg-blue-2 rounded-full py-2 pl-5 outline-none"
               value={text}
               onChange={(e) => setText(e.target.value)}
               required
