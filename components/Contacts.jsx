@@ -60,29 +60,39 @@ const Contacts = () => {
   const router = useRouter();
 
   /* CREATE CHAT */
-  const createChat = async () => {
+  const createChat = async (contact) => {
+    let members;
+  
+    if (isGroup) {
+      members = selectedContacts.map((contact) => contact._id);
+    } else {
+      members = [contact._id]
+    }
+  
     const res = await fetch("/api/chats", {
       method: "POST",
       body: JSON.stringify({
         currentUserId: currentUser._id,
-        members: selectedContacts.map((contact) => contact._id),
+        members,
         isGroup,
         name,
       }),
     });
+    
     const chat = await res.json();
-
+  
     if (res.ok) {
       router.push(`/chats/${chat._id}`);
     }
   };
+  
 
   return loading ? (
     <Loader />
   ) : (
     <div className="create-chat-container">
       <input
-        placeholder="Search username"
+        placeholder="Search contact..."
         className="input-search"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -103,7 +113,7 @@ const Contacts = () => {
             </IconButton>
           </div>
 
-          <div className="flex flex-col flex-1 overflow-y-scroll custom-scrollbar">
+          <div className="flex flex-col flex-1 gap-5 overflow-y-scroll custom-scrollbar">
             {contacts.map((user, index) => (
               <div
                 key={index}
@@ -121,24 +131,24 @@ const Contacts = () => {
                   <p className="text-base-bold">{user.username}</p>
                 </div>
 
-                <div className="flex gap-1 items-center" onClick={() => handleSelect(user)}>
-                  {open === true ? (
-                    <>
+                <div className="flex items-center justify-center gap-3">
+                  <Button 
+                    variant="contained"
+                    size="small"
+                    onClick={() => createChat(user)}
+                    endIcon={<Telegram />} 
+                    className="bg-black font-bold">
+                    Cha
+                  </Button>
+
+                  {open === true && (
+                    <div onClick={() => handleSelect(user)}>
                       {selectedContacts.find((item) => item === user) ? (
                         <CheckCircle sx={{ color: "green" }} />
                       ) : (
                         <RadioButtonUnchecked />
                       )}
-                    </>
-                  ) : (
-                    <Button 
-                      variant="contained"
-                      size="small"
-                      onClick={createChat}
-                      endIcon={<Telegram />} 
-                      className="bg-black font-bold">
-                      Cha
-                    </Button>
+                    </div>
                   )}
                 </div>
               </div>
@@ -174,9 +184,9 @@ const Contacts = () => {
                 className="btn"
                 variant="contained"
                 onClick={createChat}
-                disabled={selectedContacts.length === 0}
+                disabled={selectedContacts.length < 2}
               >
-                START A GROUP CHAT
+                GROUP CHAT
               </Button>
             </>
           )}

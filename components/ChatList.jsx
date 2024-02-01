@@ -77,16 +77,23 @@ const ChatList = ({ currentChatId }) => {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <div className="chats">
-        {chats?.map((chat, index) => (
-          <ChatBox
-            chat={chat}
-            key={index}
-            currentUser={currentUser}
-            currentChatId={currentChatId}
-          />
-        ))}
-      </div>
+      {chats.length === 0 ? (
+        <div className="chats min-h-[200px] justify-center items-center gap-4">
+          <p className="text-base-medium">Let's chat</p>
+          <img src="/assets/chat.svg" alt="chat" width={50} height={50}/>
+        </div>
+      ) : (
+        <div className="chats">
+          {chats?.map((chat, index) => (
+            <ChatBox
+              chat={chat}
+              key={index}
+              currentUser={currentUser}
+              currentChatId={currentChatId}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

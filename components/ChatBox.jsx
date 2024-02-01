@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 
 const ChatBox = ({ chat, currentUser, currentChatId }) => {
   const otherMembers = chat?.members?.filter(
-    (member) => member._id !== currentUser._id
+    (member) => member?._id !== currentUser?._id
   );
 
   const lastMessage =
@@ -29,7 +29,7 @@ const ChatBox = ({ chat, currentUser, currentChatId }) => {
           />
         ) : (
           <img
-            src={otherMembers[0].profileImage || "/assets/person.jpg"}
+            src={otherMembers[0]?.profileImage || "/assets/person.jpg"}
             alt="profile-photo"
             className="profilePhoto"
           />

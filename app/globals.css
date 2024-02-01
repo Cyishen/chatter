@@ -69,7 +69,7 @@
 
 /* Top Bar */
 .topbar {
-  @apply top-0 sticky px-10 py-5 flex items-center justify-between bg-blue-2;
+  @apply top-0 sticky px-10 py-5 flex items-center justify-between bg-blue-2 z-10;
 }
 
 .menu {
@@ -147,15 +147,15 @@
 
 /* Contacts */
 .create-chat-container {
-  @apply flex flex-col gap-5;
+  @apply flex flex-col gap-5
 }
 
 .contact-bar {
-  @apply flex gap-7 items-start max-lg:flex-col;
+  @apply flex gap-7 items-start max-lg:flex-col
 }
 
 .contact-list {
-  @apply w-full max-lg:w-full flex flex-col gap-5 bg-white rounded-3xl py-5 px-5;
+  @apply w-full max-lg:w-full flex flex-col gap-5 bg-white rounded-3xl py-5 px-5
 }
 
 .contact {
@@ -163,7 +163,7 @@
 }
 
 .create-chat {
-  @apply w-1/2 max-lg:w-full flex flex-col gap-7;
+  @apply max-lg:w-full flex flex-col gap-7;
 }
 
 .input-group-name {

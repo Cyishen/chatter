@@ -162,16 +162,16 @@ const ChatDetails = ( {chatId} ) => {
             </>
           ) : (
             <>
-              <Link href={`/profile/${otherMembers[0]._id}`} >
+              <Link href={`/profile/${otherMembers[0]?._id}`} >
                 <img
-                  src={otherMembers[0].profileImage || "/assets/person.jpg"}
+                  src={otherMembers[0]?.profileImage || "/assets/person.jpg"}
                   alt="profile photo"
                   className="profilePhoto"
                 />
               </Link>
 
               <div className="text">
-                <p>{otherMembers[0].username}</p>
+                <p>{otherMembers[0]?.username}</p>
               </div>
             </>
           )}
