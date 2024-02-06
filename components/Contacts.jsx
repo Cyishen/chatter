@@ -24,7 +24,13 @@ const Contacts = () => {
         search !== "" ? `/api/users/searchContact/${search}` : "/api/users"
       );
       const data = await res.json();
-      setContacts(data.filter((contact) => contact._id !== currentUser._id));
+
+      setContacts(
+        currentUser
+          ? data.filter((contact) => contact._id !== currentUser._id)
+          : data
+      );
+      
       setLoading(false);
     } catch (err) {
       console.log(err);
@@ -32,9 +38,7 @@ const Contacts = () => {
   };
 
   useEffect(() => {
-    if (currentUser) {
-      getContacts()
-    }
+    getContacts()
   }, [currentUser, search]);
 
   /* SELECT CONTACT */
@@ -62,6 +66,11 @@ const Contacts = () => {
   /* CREATE CHAT */
   const createChat = async (contact) => {
     let members;
+
+    if (!currentUser) {
+      router.push("/login");
+      return;
+    }
   
     if (isGroup) {
       members = selectedContacts.map((contact) => contact._id);

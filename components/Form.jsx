@@ -52,7 +52,7 @@ const Form = ({ type }) => {
       })
 
       if (res.ok) {
-        router.push("/chats");
+        router.push("/");
       }
 
       if (res.error) {
@@ -154,7 +154,7 @@ const Form = ({ type }) => {
         </form>
 
         {type === "register" ? (
-          <Link href="/" className="link">
+          <Link href="/login" className="link">
             <p className="text-center">Already have an account? Sign In Here</p>
           </Link>
         ) : (

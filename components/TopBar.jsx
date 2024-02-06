@@ -3,7 +3,6 @@
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
 import IconButton from '@mui/material/IconButton';
 
 const TopBar = () => {
@@ -18,16 +17,16 @@ const TopBar = () => {
 
   return (
     <div className="topbar">
-      <Link href="/chats">
+      <Link href="/">
         <h1 className="text-heading1-bold">Chatter</h1>
       </Link>
 
       <div className="menu">
         <div className="flex items-center gap-2 max-sm:hidden">
           <Link
-            href="/chats"
+            href="/"
             className={`${
-              pathname === "/chats" ? "text-blue-1" : ""
+              pathname === "/" ? "text-blue-1" : ""
             } text-heading4-bold`}
           >
             Chats
@@ -48,7 +47,8 @@ const TopBar = () => {
         </div>
         
         <div className="flex items-center gap-2">
-          <IconButton
+          {user && (
+            <IconButton
             aria-label="logout"
             size="medium"
             color="secondary"
@@ -56,14 +56,22 @@ const TopBar = () => {
           >
             <img src="/assets/logout.svg" alt="logout" width={25} height={25} />
           </IconButton>
+          )}
 
-          <Link href="/profile">
+          <div>
             <img
               src={user?.profileImage || "/assets/person.jpg"}
               alt="profile"
               className="profilePhoto"
+              onClick={() => {
+                if (user) {
+                  window.location.href = "/profile"
+                } else {
+                  window.location.href = "/login"
+                }
+              }}
             />
-          </Link>
+          </div>
         </div>
       </div>
     </div>

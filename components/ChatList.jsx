@@ -66,7 +66,11 @@ const ChatList = ({ currentChatId }) => {
     }
   }, [currentUser]);
 
-  return loading ? (
+  return !currentUser ? (
+    <div className="not-logged-in">
+      <p className="flex justify-center items-center h-20 bg-white rounded-2xl">Login to chats</p>
+    </div>
+  ) : loading ? (
     <Loader />
   ) : (
     <div className="chat-list">

@@ -22,7 +22,7 @@ const BottomBar = () => {
 
       <div className={`${ pathname === "/chats" ? "text-black rounded-[10px] bg-gray-100" : "text-[#737373]" } flex flex-col items-center text-center`}>
           <Link
-            href="/chats"
+            href="/"
             className="p-1"
           >
             <Telegram 
