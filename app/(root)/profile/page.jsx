@@ -30,7 +30,7 @@ const Profile = () => {
     setValue,
     reset,
     handleSubmit,
-    formState: { error },
+    formState: { errors },
   } = useForm();
 
   const uploadPhoto = (result) => {
@@ -78,8 +78,8 @@ const Profile = () => {
           />
           <PersonOutline sx={{ color: "#737373" }} />
         </div>
-        {error?.username && (
-          <p className="text-red-500">{error.username.message}</p>
+        {errors?.username && (
+          <p className="text-red-500">{errors.username.message}</p>
         )}
 
         <div className="flex items-center justify-between">

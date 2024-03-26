@@ -68,7 +68,23 @@ const ChatList = ({ currentChatId }) => {
 
   return !currentUser ? (
     <div className="not-logged-in">
-      <p className="flex justify-center items-center h-20 bg-white rounded-2xl">Login to chats</p>
+      <p className="flex justify-center items-center h-20 bg-white rounded-2xl mb-5">
+        Login to chats
+      </p>
+
+      <div className="flex flex-col gap-5">
+        <img src="/assets/chatImg.png"/>
+
+        <video 
+          autoPlay 
+          muted 
+          loop
+          playsInline={true} 
+          className='pointer-events-none'
+        >
+          <source src="/assets/chatVideo.mov" type='video/mp4'/>
+        </video>
+      </div>
     </div>
   ) : loading ? (
     <Loader />
